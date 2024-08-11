@@ -10,5 +10,7 @@ The diagram bellow illustrates the data pipelines of this company:
 
 <img width="751" alt="image" src="https://github.com/user-attachments/assets/33dcfe55-228a-4949-8e69-c500415a897b">
 
-# 2. Infrastructure of the project
+# 2. Data modelling 
+
+# 3. Infrastructure
 
