@@ -12,3 +12,7 @@ mongo_db = {
 }
 
 SERVICE_ACCOUNT_BQ_ADMIN = json.loads(base64.b64decode(os.environ['SERVICE_ACCOUNT_BQ_ADMIN']))
+
+AWS_S3_ACCESS_KEY = os.environ['AWS_S3_ACCESS_KEY']
+
+AWS_S3_ACCESS_SECRET = os.environ['AWS_S3_ACCESS_SECRET']

@@ -10,6 +10,8 @@ google-cloud-bigquery = "*"
 google-api-python-client = "*"
 pandas = "*"
 pyarrow = "*"
+boto3 = "*"
+awswrangler = "*"
 
 [dev-packages]
 
