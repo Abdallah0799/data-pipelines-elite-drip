@@ -6,5 +6,6 @@ The business teams need easy access to this data to make informed decisions. The
 
 The diagram bellow illustrates the data pipelines of this company: 
 
-<img width="751" alt="image" src="https://github.com/user-attachments/assets/573ccce4-c44c-49ca-8540-3efdcc32784a">
+<img width="751" alt="image" src="https://github.com/user-attachments/assets/33dcfe55-228a-4949-8e69-c500415a897b">
+
 
