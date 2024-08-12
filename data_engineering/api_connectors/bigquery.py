@@ -8,7 +8,9 @@ from . import BaseApiConnector
 
 
 class BigQueryConnector(BaseApiConnector):
-    def __init__(self, service_account_infos: str, scopes: List[str] = None) -> None:
+    def __init__(
+            self, service_account_infos: str, scopes: List[str] = None
+            ) -> None:
         if scopes is None:
             scopes = ["https://www.googleapis.com/auth/cloud-platform"]
 

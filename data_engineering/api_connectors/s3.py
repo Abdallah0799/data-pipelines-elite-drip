@@ -53,7 +53,7 @@ class S3Connector(BaseApiConnector):
 
         :param bucket_name: Name of the bucket
         :param file_name: Name of the bucket
-        :return: The chosen CSV file as a Dataframe 
+        :return: The chosen CSV file as a Dataframe
         """
         # Specify the S3 path to your CSV file
         s3_path = f"s3://{bucket_name}/{file_name}"
