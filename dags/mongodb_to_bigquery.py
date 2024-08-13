@@ -1,7 +1,7 @@
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
 from importlib import import_module
-from datetime import datetime, timedelta
+from datetime import datetime
 
 from data_engineering.api_connectors.mongodb import MongoDbConnector
 from data_engineering.api_connectors.bigquery import BigQueryConnector
@@ -48,9 +48,9 @@ with DAG(
         load_task = PythonOperator(
             task_id=f"load_{collection}",
             python_callable=bigquery_connector.insert_data,
-            op_kwargs={"df": extract_task.output,
+            op_kwargs={"data": extract_task.output,
                        "dataset_id": "fictive_company",
-                       "table_id": collection,
+                       "table_name": collection,
                        "schema": schema,
                        "duplicate_columns": ["id"],
                        "order_columns": ["id"]},
