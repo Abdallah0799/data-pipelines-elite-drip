@@ -370,6 +370,10 @@ extraConfigMaps: {}
 extraEnv: |
    - name: PYTHONPATH
      value: '/app'
+   - name: AWS_S3_ACCESS_KEY
+     value: "AKIAW3MEB5HZGHZPTPS7"
+   - name: AWS_S3_ACCESS_SECRET
+     value: "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"
    - name: MONGO_CONNECTION_PASSWORD
      value: "1dEgzUjDaf1Txx68"
    - name: SERVICE_ACCOUNT_BQ_ADMIN

@@ -12,6 +12,8 @@ pandas = "*"
 pyarrow = "*"
 boto3 = "*"
 awswrangler = "*"
+dbt-core = "*"
+dbt-bigquery = "*"
 
 [dev-packages]
 
