@@ -2,10 +2,15 @@ import boto3
 import awswrangler as wr
 from io import StringIO
 import pandas as pd
+from datetime import datetime, timedelta
+from typing import List
+import pytz
 
 from . import BaseApiConnector
+from data_engineering.schemas import BigQuerySchemas
 import settings
 
+bq_schemas = BigQuerySchemas()
 
 class S3Connector(BaseApiConnector):
     def __init__(self) -> None:
@@ -47,7 +52,9 @@ class S3Connector(BaseApiConnector):
     def fetch_data(
             self,
             bucket_name: str,
-            file_name: str
+            root_folder: str,
+            data_type: str,
+            datetime_window_filter: float
             ) -> pd.DataFrame:
         """Fetch a CSV file from an S3 bucket
 
@@ -56,10 +63,78 @@ class S3Connector(BaseApiConnector):
         :return: The chosen CSV file as a Dataframe
         """
         # Specify the S3 path to your CSV file
-        s3_path = f"s3://{bucket_name}/{file_name}"
+        S3_PATH_BASE = f"s3://{bucket_name}/{root_folder}/{data_type}/"
 
-        # Read the CSV file from S3 into a Pandas DataFrame using the session
-        data = wr.s3.read_csv(s3_path,
-                              boto3_session=self.session)
+        # Get file names we want to fetch
+        file_names = self.get_file_names(bucket_name,
+                                         root_folder,
+                                         data_type,
+                                         datetime_window_filter)
+
+        dfs = []
+        # Fetch data
+        for file_name in file_names:
+
+            s3_path = S3_PATH_BASE + file_name
+            # Read the CSV file from S3 into a Pandas DataFrame using the session
+            data = wr.s3.read_csv(s3_path,
+                                  boto3_session=self.session)
+
+            # Transform raw data from the csv
+            data = self.transform_data(data, data_type)
+            dfs.append(data)
+
+        return pd.concat(dfs)
+
+    def get_file_names(
+            self,
+            bucket_name: str,
+            root_folder: str,
+            data_type: str,
+            datetime_window_filter: float
+    ) -> List[str]:
+        folder_path = f"{root_folder}/{data_type}/"
+
+        # List all objects in the specified S3 folder
+        response = self.s3_client.list_objects_v2(Bucket=bucket_name,
+                                                  Prefix=folder_path)
+
+        csv_files = []
+        if 'Contents' in response:
+            for obj in response['Contents']:
+                last_modified = obj['LastModified']
+                
+                # Check if the file is a CSV and was uploaded within the window
+                if (last_modified >= (datetime.now(last_modified.tzinfo) - timedelta(datetime_window_filter))
+                    and obj['Key'].endswith('.csv')):
+                    csv_files.append(obj['Key'].split(folder_path)[-1])
+
+        return csv_files
+
+    def transform_data(
+            self,
+            data: pd.DataFrame,
+            data_name: str
+    ) -> pd.DataFrame:
+        """
+        """
+        # Getting corresponding schema
+        schema = getattr(bq_schemas, data_name)
+
+        # Ensure all BigQuery columns are present in the DataFrame
+        df_columns = data.columns
+        products_columns = [p.name for p in schema]
+
+        missing_columns = set(products_columns) - set(df_columns)
+        if missing_columns:
+            raise ValueError(f"Missing columns in CSV: {missing_columns}")
+
+        # Keep only the fields we want
+        data = data[products_columns]
+
+        # Convert date fields
+        for field in schema:
+            if 'DATE' in field.field_type:
+                data[field.name] = pd.to_datetime(data[field.name])
 
         return data
