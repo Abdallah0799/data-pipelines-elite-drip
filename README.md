@@ -14,3 +14,4 @@ The diagram bellow illustrates the data pipelines of this company:
 
 # 3. Infrastructure
 
+# 4. Data Visualization
