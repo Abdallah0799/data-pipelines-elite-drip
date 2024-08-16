@@ -31,7 +31,7 @@ For the moment we simulate locally a Kubernetes cluster with kind, and deploy Ai
 The helm chart is associated to this project.
 You can build airflow locally on a Kubernetes cluster with the following steps:
 
-# 5. Processing big volume of data with Spark
+# 5. Processing Big Volume of data with Spark
 🏗 Work in progress 🏗
 
 A new source of data will be added to the pipeline. This source will have a big volume of data, that we will need to process with spark before loading it to our warehouse.
