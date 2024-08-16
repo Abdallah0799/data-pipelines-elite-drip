@@ -4,7 +4,10 @@ This project focuses on processing data from a fictive company that operates an 
 
 The business teams need easy access to this data to take the best decisions. Therefore, the goal of this project is to efficiently retrieve and consolidate the data from these disparate sources into a centralized BigQuery data warehouse, making it ready for analysis and visualization.
 
-# 1. Data architecture
+# 1. Data modelling 
+Here is the data modelling:
+
+# 2. Data architecture
 
 The diagram bellow illustrates the data pipelines of this company: 
 
@@ -15,8 +18,6 @@ Airflow will schedule a dag every hour that follows these steps:
 - then load this data into Bigquery table and make sure to not have duplicate and keep only the most recent data in each table
 - finally a dbt task is started to make transformation on our raw tables and create models ready for analysis and visualization. dbt task is created with the open source project dbt-airflow
  
-
-# 2. Data modelling 
 
 # 3. Data Visualization
 We will use Looker Studio for data Viz
