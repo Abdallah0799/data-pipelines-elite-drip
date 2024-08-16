@@ -19,4 +19,14 @@ AWS_S3_ACCESS_SECRET = os.environ['AWS_S3_ACCESS_SECRET']
 
 MONGO_DB_FETCH_WINDOW = 360  # days
 
-S3_FETCH_WINDOW = 0.2  # days
+S3_FETCH_WINDOW = 100 # days
+
+data_to_fetch = {
+    "mongodb": {
+        "center": ["orders", "charges"]
+    },
+
+    "s3": {
+        "fictive-company": ["order_items", "products"]
+    }
+}

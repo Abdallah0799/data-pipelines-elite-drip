@@ -12,10 +12,20 @@ import settings
 
 bq_schemas = BigQuerySchemas()
 
+
 class S3Connector(BaseApiConnector):
-    def __init__(self) -> None:
+    name = "s3"
+
+    def __init__(self,
+                 bucket_name: str) -> None:
+        """
+        :param bucket_name: Name of the bucket
+        """
         ACCESS_KEY = settings.AWS_S3_ACCESS_KEY
         SECRET_KEY = settings.AWS_S3_ACCESS_SECRET
+
+        self.bucket_name = bucket_name
+        self.dataset = bucket_name
 
         # initialize a Boto client and session
         self.s3_client = boto3.client(
@@ -31,13 +41,11 @@ class S3Connector(BaseApiConnector):
     def insert_data(
             self,
             data: pd.DataFrame,
-            bucket_name: str,
             file_name: str
             ) -> None:
         """Upload a CSV file to an S3 bucket
 
         :param data: Data to upload
-        :param bucket: Bucket to upload to
         :param file_name: Name of the file in s3
         """
         # Convert DataFrame to CSV
@@ -45,14 +53,12 @@ class S3Connector(BaseApiConnector):
         data.to_csv(csv_buffer, index=False)
 
         # Upload the CSV file to S3
-        self.s3_client.put_object(Bucket=bucket_name,
+        self.s3_client.put_object(Bucket=self.bucket_name,
                                   Key=file_name,
                                   Body=csv_buffer.getvalue())
 
     def fetch_data(
             self,
-            bucket_name: str,
-            root_folder: str,
             data_type: str,
             datetime_window_filter: float
             ) -> pd.DataFrame:
@@ -63,14 +69,11 @@ class S3Connector(BaseApiConnector):
         :return: The chosen CSV file as a Dataframe
         """
         # Specify the S3 path to your CSV file
-        S3_PATH_BASE = f"s3://{bucket_name}/{root_folder}/{data_type}/"
+        S3_PATH_BASE = f"s3://{self.bucket_name}/{data_type}/"
 
         # Get file names we want to fetch
-        file_names = self.get_file_names(bucket_name,
-                                         root_folder,
-                                         data_type,
+        file_names = self.get_file_names(data_type,
                                          datetime_window_filter)
-
         dfs = []
         # Fetch data
         for file_name in file_names:
@@ -88,22 +91,20 @@ class S3Connector(BaseApiConnector):
 
     def get_file_names(
             self,
-            bucket_name: str,
-            root_folder: str,
             data_type: str,
             datetime_window_filter: float
     ) -> List[str]:
-        folder_path = f"{root_folder}/{data_type}/"
+        folder_path = f"{data_type}/"
 
         # List all objects in the specified S3 folder
-        response = self.s3_client.list_objects_v2(Bucket=bucket_name,
+        response = self.s3_client.list_objects_v2(Bucket=self.bucket_name,
                                                   Prefix=folder_path)
 
         csv_files = []
         if 'Contents' in response:
             for obj in response['Contents']:
                 last_modified = obj['LastModified']
-                
+
                 # Check if the file is a CSV and was uploaded within the window
                 if (last_modified >= (datetime.now(last_modified.tzinfo) - timedelta(datetime_window_filter))
                     and obj['Key'].endswith('.csv')):

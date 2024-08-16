@@ -7,24 +7,27 @@ import settings
 
 
 class MongoDbConnector(BaseApiConnector):
+    name = "mongodb"
+
     def __init__(
             self,
             db_name
             ) -> None:
         # Connection to the MongoDB database
         CONNECTION_STRING = settings.mongo_db["CONNECTION_STRING"]
+        self.dataset = db_name
         self.client = MongoClient(CONNECTION_STRING)
         self.db = self.client[db_name]
 
     def insert_data(
             self,
-            collection_name: str,
+            data_type: str,
             data,
             single: bool = True
             ) -> None:
         """Insert data in a MongoDB collection.
 
-        :param collection_name: The name of the MongoDB collection 
+        :param data_type: The name of the MongoDB collection 
         from which to fetch data.
 
         :param data: The data to insert. It could be either a list of
@@ -34,7 +37,7 @@ class MongoDbConnector(BaseApiConnector):
         :param single: if True then data is a dictionnary, if False
                     then data is a list of dictionnaries
         """
-        collection = self.db[collection_name]
+        collection = self.db[data_type]
 
         if single:
             collection.insert_one(document=data)
@@ -43,13 +46,13 @@ class MongoDbConnector(BaseApiConnector):
 
     def fetch_data(
             self,
-            collection_name: str,
+            data_type: str,
             filters: dict = {}
             ) -> pd.DataFrame:
         """Fetch data from a specified MongoDB collection with applied filters,
         parse the result, and convert it into a pandas DataFrame.
 
-        :param collection_name: The name of the MongoDB collection
+        :param data_type: The name of the MongoDB collection
         from which to fetch data.
 
         :param filters: A dictionary of filters to apply to the MongoDB query.
@@ -59,11 +62,11 @@ class MongoDbConnector(BaseApiConnector):
         :return: A pandas DataFrame containing the parsed data from
         the MongoDB collection.
         """
-        data = list(self.db[collection_name].find(filters))
+        data = list(self.db[data_type].find(filters))
 
         # Getting the coresponding parsing function
-        module = import_module('data_engineering.data_schemas.' + collection_name)
-        parser = getattr(module, 'parse_raw_' + collection_name)
+        module = import_module('data_engineering.parsing.' + data_type)
+        parser = getattr(module, 'parse_raw_' + data_type)
 
         # Parse Data
         data = [parser(elt) for elt in data]
