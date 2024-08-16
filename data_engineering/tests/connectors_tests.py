@@ -1,15 +1,16 @@
 import unittest
 import pandas as pd
+from datetime import datetime, timedelta
 
 from data_engineering.api_connectors.bigquery import BigQueryConnector
 from data_engineering.api_connectors.mongodb import MongoDbConnector
 from data_engineering.api_connectors.s3 import S3Connector
-from data_engineering.data_schemas.orders import orders_schema
+from data_engineering.schemas import BigQuerySchemas
 import settings
 
 bq_connector = BigQueryConnector(settings.SERVICE_ACCOUNT_BQ_ADMIN)
 mongo_connector = MongoDbConnector("center")
-s3_connector = S3Connector()
+s3_connector = S3Connector("fictive-company")
 
 
 class ConnectorsTest(unittest.TestCase):
@@ -21,14 +22,21 @@ class ConnectorsTest(unittest.TestCase):
         data = pd.read_csv("orders.csv", index_col=False)
         data["order_date"] = pd.to_datetime(data["order_date"])
         bq_connector.insert_data(
-            data, "fictive_company", "orders", orders_schema, ["id"], ["id"]
+            data, "fictive_company", "orders", BigQuerySchemas.orders, ["id"], ["id"]
         )
 
     def test_s3_data_fetch(self):
-        res = s3_connector.fetch_data("fictive-company", "orders.csv")
+        res = s3_connector.fetch_data("order_items", settings.S3_FETCH_WINDOW)
 
     def test_mongo_data_fetch(self):
-        res = mongo_connector.fetch_data("orders")
+        res = mongo_connector.fetch_data(
+            "orders",
+            {
+                "updated_at": {
+                    "$gte": (datetime.now() - timedelta(settings.MONGO_DB_FETCH_WINDOW))
+                }
+            },
+        )
 
 
 if __name__ == "__main__":

@@ -1,5 +1,4 @@
 from dataclasses import dataclass
-from google.cloud import bigquery
 import datetime
 
 from . import BaseSchema
@@ -32,13 +31,3 @@ def parse_raw_orders(raw_order: dict) -> Order:
         amount=raw_order["amount"] if "amount" in raw_order else None,
         total_items=(raw_order["total_items"] if "total_items" in raw_order else None),
     )
-
-orders_schema = [
-        bigquery.SchemaField("id", "INT64"),
-        bigquery.SchemaField("order_date", "DATE"),
-        bigquery.SchemaField("status", "STRING"),
-        bigquery.SchemaField("country", "STRING"),
-        bigquery.SchemaField("customer_id", "INT64"),
-        bigquery.SchemaField("amount", "FLOAT64"),
-        bigquery.SchemaField("total_items", "INT64")
-    ]

@@ -16,3 +16,17 @@ SERVICE_ACCOUNT_BQ_ADMIN = json.loads(base64.b64decode(os.environ['SERVICE_ACCOU
 AWS_S3_ACCESS_KEY = os.environ['AWS_S3_ACCESS_KEY']
 
 AWS_S3_ACCESS_SECRET = os.environ['AWS_S3_ACCESS_SECRET']
+
+MONGO_DB_FETCH_WINDOW = 360  # days
+
+S3_FETCH_WINDOW = 100 # days
+
+data_to_fetch = {
+    "mongodb": {
+        "center": ["orders", "charges"]
+    },
+
+    "s3": {
+        "fictive-company": ["order_items", "products"]
+    }
+}
