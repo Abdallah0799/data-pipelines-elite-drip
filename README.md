@@ -22,7 +22,7 @@ Airflow will schedule a dag every hour that follows these steps:
 We will use Looker Studio for data Viz
 Here is the link to the dashboard: 
 
-# 4. Infrastructure
+# 4. Infrastructure: Deploy Airflow on Google Kubernetes Engine
 🏗 Work in progress 🏗
 We will deploy airlow on Google Kubernetes Engine.
 For the moment we simulate locally a Kubernetes cluster with kind, and deploy Airflow on it.
