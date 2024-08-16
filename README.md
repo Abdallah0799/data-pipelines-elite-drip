@@ -10,6 +10,12 @@ The diagram bellow illustrates the data pipelines of this company:
 
 <img width="751" alt="image" src="https://github.com/user-attachments/assets/33dcfe55-228a-4949-8e69-c500415a897b">
 
+Airflow will schedule a dag every our that follows these steps:
+- extract the latest data from MongoDB and S3 (typically data having updated_at field change the last hour)
+- then load this data into Bigquery table and make sure to not have duplicate and keep only the most recent data in each table
+- finally a dbt task is started to make transformation on our raw tables and create models ready for analysis and visualization
+ 
+
 # 2. Data modelling 
 
 # 3. Infrastructure
