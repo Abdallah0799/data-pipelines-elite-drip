@@ -35,3 +35,5 @@ You can build airflow locally on a Kubernetes cluster with the following steps:
 🏗 Work in progress 🏗
 
 A new source of data will be added to the pipeline. This source will have a big volume of data, that we will need to process with spark before loading it to our warehouse.
+
+# 6. About the data
