@@ -11,7 +11,7 @@ As they enter 2024, the company is shifting its strategy to become data-driven, 
 The business teams need continuous access to high-quality data to make the best decisions. Therefore, the goal of this project is to efficiently retrieve and consolidate the data from these disparate sources into a centralized data warehouse, making it ready for analysis and visualization.
 
 # Table of Contents
-[Built with](#built-with)
+[Built with](#🚀-built-with)
 1. [Data modeling Graph](#data-modeling-graph)
 
 
@@ -40,7 +40,7 @@ Big Data
 
 
 
-## 1. Data modeling Graph
+## Data modeling Graph
 
 <p align="center">
 <img width="756" alt="image" src="https://github.com/user-attachments/assets/5a3b4dbc-37cb-402f-98ff-4af3b3f672d3">
