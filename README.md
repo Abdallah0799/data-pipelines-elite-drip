@@ -38,6 +38,10 @@ Big Data
 # 1. Data modelling 
 Here is the data modelling:
 
+<p align="center">
+<img width="756" alt="image" src="https://github.com/user-attachments/assets/007064c8-c50a-41e2-9c81-97e333d226c4">
+</p>
+
 # 2. Data architecture
 
 The diagram bellow illustrates the data pipelines of this company: 
