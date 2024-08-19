@@ -59,10 +59,16 @@ To design the data architecture, I will implement an ELT (Extract, Load, Transfo
 <img width="756" alt="image" src="https://github.com/user-attachments/assets/6c1cb846-b202-488d-a084-308497826a6e">
 </p>
 
-Airflow will schedule a dag every hour that follows these steps:
-- extract the latest data from MongoDB and S3 (typically data having updated_at field change the last hour)
-- then load this data into Bigquery table and make sure to not have duplicate and keep only the most recent data in each table
-- finally a dbt task is started to make transformation on our raw tables and create models ready for analysis and visualization. dbt task is created with the open source project dbt-airflow
+1. Extract task
+To accomplish this task, we will need to interact with the source databases via API calls. To facilitate this, I developed a set of connector classes: MongoDBConnector, S3Connector, and BallDontLieConnector. Each of these classes inherits from a BaseConnector class and includes a fetch_data method. This method accepts two key parameters: data_type (representing the specific entity to fetch, such as orders or order items) and filters (which can include criteria like date ranges).
+
+2. Load task
+
+3. Transform task 
+finally a dbt task is started to make transformation on our raw tables and create models ready for analysis and visualization. dbt task is created with the open source project dbt-airflow
+
+### About Airflow
+There is one dag. Here are the tasks:
 
 <p align="center">
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/d696ba56-1721-430e-8171-083acfbb82eb">
