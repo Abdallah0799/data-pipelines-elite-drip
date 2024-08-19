@@ -10,7 +10,7 @@ The business teams need easy access to this data to take the best decisions. The
 ### Built With
 
 Languages
-![image](https://github.com/user-attachments/assets/51f468d4-586b-4608-bc08-1b23879c55b5)
+<img src="[path/to/image.png](https://github.com/user-attachments/assets/51f468d4-586b-4608-bc08-1b23879c55b5)" alt="Alt text" width="500" height="300">
 ![image](https://github.com/user-attachments/assets/fc45f7d8-899d-46e0-ae91-5416ca797f7b)
 
 Modern Data Tools
