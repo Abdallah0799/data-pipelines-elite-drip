@@ -12,6 +12,7 @@ The business teams need easy access to this data to take the best decisions. The
 Languages
 
 <img src="https://github.com/user-attachments/assets/51f468d4-586b-4608-bc08-1b23879c55b5" alt="Alt text" width="60" height="60">
+nbsp;&nbsp;&nbsp;&nbsp;
 <img src="https://github.com/user-attachments/assets/fc45f7d8-899d-46e0-ae91-5416ca797f7b" alt="Alt text" width="60" height="60">
 
 Modern Data Tools
