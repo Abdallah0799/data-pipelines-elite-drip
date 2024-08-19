@@ -16,19 +16,25 @@ Languages
 <img src="https://github.com/user-attachments/assets/fc45f7d8-899d-46e0-ae91-5416ca797f7b" alt="Alt text" width="60" height="60">
 
 Modern Data Tools
-![image](https://github.com/user-attachments/assets/6f695219-fe6c-4b08-812e-cff24ff8af49)
-![image](https://github.com/user-attachments/assets/7a4406f7-dec9-450b-bd61-1d1e77303e18)
+
+<img src="https://github.com/user-attachments/assets/6f695219-fe6c-4b08-812e-cff24ff8af49" alt="Alt text" width="60" height="60">
+&nbsp;&nbsp;&nbsp;
+<img src="https://github.com/user-attachments/assets/7a4406f7-dec9-450b-bd61-1d1e77303e18" alt="Alt text" width="60" height="60">
 
 Cloud
-![image](https://github.com/user-attachments/assets/ce00c182-5c02-4350-87b6-9c0b417ecfee)
-![image](https://github.com/user-attachments/assets/50dde161-ace3-4307-9636-37f4753dd13b)
+
+<img src="https://github.com/user-attachments/assets/ce00c182-5c02-4350-87b6-9c0b417ecfee" alt="Alt text" width="60" height="60">
+&nbsp;&nbsp;&nbsp;
+<img src="https://github.com/user-attachments/assets/50dde161-ace3-4307-9636-37f4753dd13b" alt="Alt text" width="60" height="60">
 
 Devops
-![image](https://github.com/user-attachments/assets/95f44ffc-c76f-45b8-832d-e76ce451db0a)
-![image](https://github.com/user-attachments/assets/366098c6-f3bb-4757-b419-c833baf329e2)
+
+<img src="https://github.com/user-attachments/assets/95f44ffc-c76f-45b8-832d-e76ce451db0a" alt="Alt text" width="60" height="60">
+&nbsp;&nbsp;&nbsp;
+<img src="https://github.com/user-attachments/assets/366098c6-f3bb-4757-b419-c833baf329e2" alt="Alt text" width="60" height="60">
 
 Big Data
-![image](https://github.com/user-attachments/assets/f370ae47-a006-40f3-b8ce-65188eaadbd5)
+<img src="https://github.com/user-attachments/assets/f370ae47-a006-40f3-b8ce-65188eaadbd5" alt="Alt text" width="60" height="60">
 
 
 # 1. Data modelling 
