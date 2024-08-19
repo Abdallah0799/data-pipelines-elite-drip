@@ -9,8 +9,6 @@ The business teams need easy access to this data to take the best decisions. The
 
 ## 🚀 Built With
 
-This project was built using a powerful stack of tools and technologies:
-
 Languages:
 - ![Python](https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white&style=flat-square) **[Python](https://www.python.org/)**: The core programming language for developing the logic and functionality.
 - ![SQL](https://img.shields.io/badge/-SQL-CC2927?logo=Microsoft-SQL-Server&logoColor=white&style=flat-square) **[SQL](https://en.wikipedia.org/wiki/SQL)**: Used for building data transformations in our data warehouse.
