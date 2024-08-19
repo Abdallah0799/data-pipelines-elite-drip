@@ -63,8 +63,10 @@ Airflow will schedule a dag every hour that follows these steps:
 - extract the latest data from MongoDB and S3 (typically data having updated_at field change the last hour)
 - then load this data into Bigquery table and make sure to not have duplicate and keep only the most recent data in each table
 - finally a dbt task is started to make transformation on our raw tables and create models ready for analysis and visualization. dbt task is created with the open source project dbt-airflow
- 
+
+<p align="center">
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/d696ba56-1721-430e-8171-083acfbb82eb">
+</p>
 
 ## Data Visualization
 We will use Looker Studio for data Viz
