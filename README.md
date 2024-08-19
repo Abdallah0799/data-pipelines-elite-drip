@@ -6,7 +6,7 @@ Elite Drip is a unique clothing brand exclusively catering to NBA players. Unlik
 
 As they enter 2024, the company is shifting its strategy to become data-driven, aiming to optimize its processes and make informed decisions. I have been brought on board as their new Data Engineer to lead this initiative. The challenge ahead is significant, as the company’s data is currently disorganized and scattered across multiple sources, including a MongoDB database, CSV files stored in an S3 bucket, and the [BallDontLie](https://www.balldontlie.io/) database. (PS: don't worry they fired the former web developer)
 
-The business teams need continuous access to high-quality data to make the best decisions. Therefore, the goal of this project is to efficiently retrieve and consolidate the data from these disparate sources into a centralized BigQuery data warehouse, making it ready for analysis and visualization.
+The business teams need continuous access to high-quality data to make the best decisions. Therefore, the goal of this project is to efficiently retrieve and consolidate the data from these disparate sources into a centralized data warehouse, making it ready for analysis and visualization.
 
 ## 🚀 Built With
 
