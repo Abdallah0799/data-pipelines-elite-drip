@@ -2,8 +2,9 @@
 
 <img width="531" alt="image" src="https://github.com/user-attachments/assets/d5033716-c9e2-4537-9b2e-76fcd78902c8">
 
+Elite Drip is a clothing company. But Elit Drip is special, it only sell its product to NBA players. They built a branding community on basketball only for basktetball players. But Elit Drip does not have physic shops. They sell their products on their e-commerce website. The website opened in January 2023. During their first year, they did not rely on data to take their business decisions. In january 2024, they want to change their strategy and rely on data to take the best business decisions and optimize their process. 
 
-This project focuses on processing data from a fictive company that operates an e-commerce website selling its own brand of clothing. Unfortunately, the data from this website is quite disorganized. Instead of being centralized, the data is scattered across two main sources: a MongoDB database and CSV files stored in an S3 bucket.
+In this context the company decided to hire me as their Data Engineer.And the challenge is quite big because the data from this website is quite disorganized! Instead of being centralized, the data is scattered across two main sources: a MongoDB database, CSV files stored in an S3 bucket, and the BallDontlie database. Don't worry they fired the former web developer! 
 
 The business teams need easy access to this data to take the best decisions. Therefore, the goal of this project is to efficiently retrieve and consolidate the data from these disparate sources into a centralized BigQuery data warehouse, making it ready for analysis and visualization.
 
