@@ -65,9 +65,11 @@ To accomplish this task, we will need to interact with the source databases via 
 
 2. Load task
 
+To load the extracted data into BigQuery, we'll need to interact with it via API calls. For this purpose, I developed a BigQueryConnector class. This class includes an insert_data method, which manages duplicates to ensure that the BigQuery table remains free of redundant entries. The method requires you to specify an order field, which it uses to determine the preferred entry among duplicates for a particular field.
+
 3. Transform task
 
-finally a dbt task is started to make transformation on our raw tables and create models ready for analysis and visualization. dbt task is created with the open source project dbt-airflow
+Finally, a dbt task is initiated to transform our raw tables into models that are ready for analysis and visualization. This task is orchestrated using the open-source dbt-airflow project, ensuring a seamless integration between dbt and our Airflow pipeline
 
 #### About Airflow
 There is one dag. Here are the tasks:
