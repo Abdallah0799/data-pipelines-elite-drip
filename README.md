@@ -59,15 +59,15 @@ To design the data architecture, I will implement an ELT (Extract, Load, Transfo
 <img width="756" alt="image" src="https://github.com/user-attachments/assets/6c1cb846-b202-488d-a084-308497826a6e">
 </p>
 
-1. Extract task
+1. **Extract task**
 
 To accomplish this task, we will need to interact with the source databases via API calls. To facilitate this, I developed a set of connector classes: MongoDBConnector, S3Connector, and BallDontLieConnector. Each of these classes inherits from a BaseConnector class and includes a fetch_data method. This method accepts two key parameters: data_type (representing the specific entity to fetch, such as orders or order items) and filters (which can include criteria like date ranges).
 
-2. Load task
+2. **Load task**
 
 To load the extracted data into BigQuery, we'll need to interact with it via API calls. For this purpose, I developed a BigQueryConnector class. This class includes an insert_data method, which manages duplicates to ensure that the BigQuery table remains free of redundant entries. The method requires you to specify an order field, which it uses to determine the preferred entry among duplicates for a particular field.
 
-3. Transform task
+3. **Transform task**
 
 Finally, a dbt task is initiated to transform our raw tables into models that are ready for analysis and visualization. This task is orchestrated using the open-source dbt-airflow project, ensuring a seamless integration between dbt and our Airflow pipeline
 
