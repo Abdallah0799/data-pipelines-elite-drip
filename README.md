@@ -9,32 +9,13 @@ The business teams need easy access to this data to take the best decisions. The
 
 ### Built With
 
-Languages
-
-<img src="https://github.com/user-attachments/assets/51f468d4-586b-4608-bc08-1b23879c55b5" alt="Alt text" width="60" height="60">
-&nbsp;&nbsp;&nbsp;
-<img src="https://github.com/user-attachments/assets/fc45f7d8-899d-46e0-ae91-5416ca797f7b" alt="Alt text" width="60" height="60">
-
-Modern Data Tools
-
-<img src="https://github.com/user-attachments/assets/6f695219-fe6c-4b08-812e-cff24ff8af49" alt="Alt text" width="60" height="60">
-&nbsp;&nbsp;&nbsp;
-<img src="https://github.com/user-attachments/assets/7a4406f7-dec9-450b-bd61-1d1e77303e18" alt="Alt text" width="60" height="60">
-
-Cloud
-
-<img src="https://github.com/user-attachments/assets/ce00c182-5c02-4350-87b6-9c0b417ecfee" alt="Alt text" width="60" height="60">
-&nbsp;&nbsp;&nbsp;
-<img src="https://github.com/user-attachments/assets/50dde161-ace3-4307-9636-37f4753dd13b" alt="Alt text" width="60" height="60">
-
-Devops
-
-<img src="https://github.com/user-attachments/assets/95f44ffc-c76f-45b8-832d-e76ce451db0a" alt="Alt text" width="60" height="60">
-&nbsp;&nbsp;&nbsp;
-<img src="https://github.com/user-attachments/assets/366098c6-f3bb-4757-b419-c833baf329e2" alt="Alt text" width="60" height="60">
-
-Big Data
-<img src="https://github.com/user-attachments/assets/f370ae47-a006-40f3-b8ce-65188eaadbd5" alt="Alt text" width="60" height="60">
+**[Python](https://www.python.org/)**: The core programming language for developing the logic and functionality.
+**[SQL](https://en.wikipedia.org/wiki/SQL)**: Used for managing and querying relational databases.
+**[Google Cloud Platform (GCP)](https://cloud.google.com/)**: For deploying and managing cloud infrastructure.
+**[Amazon Web Services (AWS)](https://aws.amazon.com/)**: Leveraged for additional cloud services and scalable solutions.
+**[Docker](https://www.docker.com/)**: Containerization platform for packaging and running applications consistently across environments.
+**[Kubernetes](https://kubernetes.io/)**: Orchestration system for automating the deployment, scaling, and management of containerized applications.
+**[Apache Spark](https://spark.apache.org/)**: Engine for big data processing, supporting large-scale data analytics.
 
 
 # 1. Data modelling 
