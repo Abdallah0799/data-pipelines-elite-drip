@@ -73,7 +73,7 @@ Finally, a dbt task is initiated to transform our raw tables into models that ar
 
 
 ### About Airflow
-There is one dag. Here are the tasks:
+There is a single DAG scheduled to run every hour. It includes three tasks that run in parallel: fetching data from MongoDB, S3, and BallDontLie, and loading it into BigQuery. Once these tasks successfully complete, the final task is triggered to execute our dbt models. Here is the tasks diagram:
 
 <p align="center">
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/d696ba56-1721-430e-8171-083acfbb82eb">
