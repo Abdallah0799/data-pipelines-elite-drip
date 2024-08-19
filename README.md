@@ -1,6 +1,7 @@
 ## About the project
 
-<img width="326" alt="image" src="https://github.com/user-attachments/assets/ba709511-b0eb-41df-86b7-602f077d4b90">
+<img width="326" alt="image" src="https://github.com/user-attachments/assets/5019c4a5-804e-4d34-bde2-8bd362024060">
+
 
 
 
