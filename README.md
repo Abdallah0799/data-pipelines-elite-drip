@@ -35,11 +35,10 @@ Big Data
 
 
 
-# 1. Data modelling 
-Here is the data modelling:
+# 1. Data modeling Graph
 
 <p align="center">
-<img width="756" alt="image" src="https://github.com/user-attachments/assets/007064c8-c50a-41e2-9c81-97e333d226c4">
+<img width="756" alt="image" src="https://github.com/user-attachments/assets/5a3b4dbc-37cb-402f-98ff-4af3b3f672d3">
 </p>
 
 # 2. Data architecture
