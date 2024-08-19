@@ -9,17 +9,24 @@ The business teams need easy access to this data to take the best decisions. The
 
 ### Built With
 
-* ![image](https://github.com/user-attachments/assets/cd1e5ded-8cc6-46f4-9334-509d43f57b10)
-* ![image](https://github.com/user-attachments/assets/d1ebfac4-0125-4873-be69-e70110487dd0)
-* ![image](https://github.com/user-attachments/assets/cf05dfee-ccc8-4e19-8aa4-1fdf52230c1c)
-* ![image](https://github.com/user-attachments/assets/8bed3758-9039-4943-8d8e-1bafefb36c11)
-* ![image](https://github.com/user-attachments/assets/de1515d0-7a1b-42c7-896a-b89bb6de2cd3)
-* ![image](https://github.com/user-attachments/assets/8b89a7b6-1cd6-41d3-a1d4-6e51201ace84)
-* ![image](https://github.com/user-attachments/assets/7b23be9d-81a1-46fd-9c16-30131ebda44b)
+Languages
+![image](https://github.com/user-attachments/assets/51f468d4-586b-4608-bc08-1b23879c55b5)
+![image](https://github.com/user-attachments/assets/fc45f7d8-899d-46e0-ae91-5416ca797f7b)
 
+Modern Data Tools
+![image](https://github.com/user-attachments/assets/6f695219-fe6c-4b08-812e-cff24ff8af49)
+![image](https://github.com/user-attachments/assets/7a4406f7-dec9-450b-bd61-1d1e77303e18)
 
+Cloud
+![image](https://github.com/user-attachments/assets/ce00c182-5c02-4350-87b6-9c0b417ecfee)
+![image](https://github.com/user-attachments/assets/50dde161-ace3-4307-9636-37f4753dd13b)
 
+Devops
+![image](https://github.com/user-attachments/assets/95f44ffc-c76f-45b8-832d-e76ce451db0a)
+![image](https://github.com/user-attachments/assets/366098c6-f3bb-4757-b419-c833baf329e2)
 
+Big Data
+![image](https://github.com/user-attachments/assets/f370ae47-a006-40f3-b8ce-65188eaadbd5)
 
 
 # 1. Data modelling 
