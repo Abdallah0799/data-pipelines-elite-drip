@@ -10,9 +10,12 @@ As they enter 2024, the company is shifting its strategy to become data-driven, 
 
 The business teams need continuous access to high-quality data to make the best decisions. Therefore, the goal of this project is to efficiently retrieve and consolidate the data from these disparate sources into a centralized data warehouse, making it ready for analysis and visualization.
 
-# Table of Contents
+## Table of Contents
 [Built with](#🚀-built-with)
 1. [Data modeling Graph](#data-modeling-graph)
+2. [Data architecture](#data-architecture)
+3. [Data Visualization](#data-visualization)
+4. [Infrastructure: Deploy Airflow on Google Kubernetes Engine](#infrastructure:-deploy-airflow-on-google-kubernetes-engine)
 
 
 ## 🚀 Built With
@@ -46,7 +49,7 @@ Big Data
 <img width="756" alt="image" src="https://github.com/user-attachments/assets/5a3b4dbc-37cb-402f-98ff-4af3b3f672d3">
 </p>
 
-# 2. Data architecture
+## Data architecture
 
 The diagram bellow illustrates the data pipelines of this company: 
 
@@ -61,11 +64,11 @@ Airflow will schedule a dag every hour that follows these steps:
  
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/d696ba56-1721-430e-8171-083acfbb82eb">
 
-# 3. Data Visualization
+## Data Visualization
 We will use Looker Studio for data Viz
 Here is the link to the dashboard: 
 
-# 4. Infrastructure: Deploy Airflow on Google Kubernetes Engine
+## Infrastructure: Deploy Airflow on Google Kubernetes Engine
 🏗 Work in progress 🏗
 
 We will deploy airlow on Google Kubernetes Engine.
@@ -73,9 +76,9 @@ For the moment we simulate locally a Kubernetes cluster with kind, and deploy Ai
 The helm chart is associated to this project.
 You can build airflow locally on a Kubernetes cluster with the following steps:
 
-# 5. Processing Big Volume of data with Spark
+## Processing Big Volume of data with Spark
 🏗 Work in progress 🏗
 
 A new source of data will be added to the pipeline. This source will have a big volume of data, that we will need to process with spark before loading it to our warehouse.
 
-# 6. About the data
+## About the data
