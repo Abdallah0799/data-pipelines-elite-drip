@@ -11,10 +11,15 @@ The business teams need easy access to this data to take the best decisions. The
 
 This project was built using a powerful stack of tools and technologies:
 
+Languages:
 - ![Python](https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white&style=flat-square) **[Python](https://www.python.org/)**: The core programming language for developing the logic and functionality.
 - ![SQL](https://img.shields.io/badge/-SQL-CC2927?logo=Microsoft-SQL-Server&logoColor=white&style=flat-square) **[SQL](https://en.wikipedia.org/wiki/SQL)**: Used for building data transformations in our data warehouse.
+
+Cloud:
 - ![GCP](https://img.shields.io/badge/-GCP-4285F4?logo=google-cloud&logoColor=white&style=flat-square) **[Google Cloud Platform (GCP)](https://cloud.google.com/)**: We used two services: BigQuery to store our data warehouse and Cloud Storage to store tempory data.
 - ![AWS](https://img.shields.io/badge/-AWS-232F3E?logo=amazon-aws&logoColor=white&style=flat-square) **[Amazon Web Services (AWS)](https://aws.amazon.com/)**: We used on service: S3 to store raw data.
+
+Devops:
 - ![Docker](https://img.shields.io/badge/-Docker-2496ED?logo=docker&logoColor=white&style=flat-square) **[Docker](https://www.docker.com/)**: Containerization platform for packaging and running applications consistently across environments.
 - ![Kubernetes](https://img.shields.io/badge/-Kubernetes-326CE5?logo=kubernetes&logoColor=white&style=flat-square) **[Kubernetes](https://kubernetes.io/)**: Orchestration system for automating the deployment, scaling, and management of containerized applications.
 - ![Spark](https://img.shields.io/badge/-Apache%20Spark-E25A1C?logo=apachespark&logoColor=white&style=flat-square) **[Apache Spark](https://spark.apache.org/)**: Engine for big data processing, supporting large-scale data analytics.
