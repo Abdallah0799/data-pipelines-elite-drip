@@ -71,7 +71,7 @@ To load the extracted data into BigQuery, we'll need to interact with it via API
 
 Finally, a dbt task is initiated to transform our raw tables into models that are ready for analysis and visualization. This task is orchestrated using the open-source dbt-airflow project, ensuring a seamless integration between dbt and our Airflow pipeline
 
-#### About Airflow
+### About Airflow
 There is one dag. Here are the tasks:
 
 <p align="center">
