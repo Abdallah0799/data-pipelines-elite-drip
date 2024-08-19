@@ -15,7 +15,9 @@ The business teams need continuous access to high-quality data to make the best 
 1. [Data modeling Graph](#data-modeling-graph)
 2. [Data architecture](#data-architecture)
 3. [Data Visualization](#data-visualization)
-4. [Infrastructure: Deploy Airflow on Google Kubernetes Engine](#infrastructure:-deploy-airflow-on-google-kubernetes-engine)
+4. [Infrastructure](#infrastructure)
+5. [Big Data processing](#big-data-processing)
+6. [About the data](#about-the-data)
 
 
 ## 🚀 Built With
@@ -68,7 +70,7 @@ Airflow will schedule a dag every hour that follows these steps:
 We will use Looker Studio for data Viz
 Here is the link to the dashboard: 
 
-## Infrastructure: Deploy Airflow on Google Kubernetes Engine
+## Infrastructure
 🏗 Work in progress 🏗
 
 We will deploy airlow on Google Kubernetes Engine.
@@ -76,7 +78,7 @@ For the moment we simulate locally a Kubernetes cluster with kind, and deploy Ai
 The helm chart is associated to this project.
 You can build airflow locally on a Kubernetes cluster with the following steps:
 
-## Processing Big Volume of data with Spark
+## Big Data processing
 🏗 Work in progress 🏗
 
 A new source of data will be added to the pipeline. This source will have a big volume of data, that we will need to process with spark before loading it to our warehouse.
