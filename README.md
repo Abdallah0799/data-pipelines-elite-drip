@@ -6,8 +6,19 @@ The business teams need easy access to this data to take the best decisions. The
 
 ### Built With
 
-* ![image]({https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue})
-* <img src="{https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue}" />
+* ![image](https://github.com/user-attachments/assets/cd1e5ded-8cc6-46f4-9334-509d43f57b10)
+* ![image](https://github.com/user-attachments/assets/d1ebfac4-0125-4873-be69-e70110487dd0)
+* ![image](https://github.com/user-attachments/assets/cf05dfee-ccc8-4e19-8aa4-1fdf52230c1c)
+* ![image](https://github.com/user-attachments/assets/8bed3758-9039-4943-8d8e-1bafefb36c11)
+* ![image](https://github.com/user-attachments/assets/de1515d0-7a1b-42c7-896a-b89bb6de2cd3)
+* ![image](https://github.com/user-attachments/assets/8b89a7b6-1cd6-41d3-a1d4-6e51201ace84)
+* ![image](https://github.com/user-attachments/assets/7b23be9d-81a1-46fd-9c16-30131ebda44b)
+
+
+
+
+
+
 # 1. Data modelling 
 Here is the data modelling:
 
