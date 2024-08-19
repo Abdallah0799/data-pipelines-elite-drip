@@ -53,7 +53,7 @@ Big Data
 
 ## Data architecture
 
-The diagram bellow illustrates the data pipelines of this company: 
+To design the data architecture, I will implement an ELT (Extract, Load, Transform) pipeline using Python. The process begins by extracting data from our three sources, followed by loading it into a BigQuery Data Warehouse. Finally, we will transform the data within the Data Warehouse using dbt. These three core tasks will be orchestrated with Apache Airflow. The diagram below illustrates the data pipelines:
 
 <p align="center">
 <img width="756" alt="image" src="https://github.com/user-attachments/assets/6c1cb846-b202-488d-a084-308497826a6e">
