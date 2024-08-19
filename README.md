@@ -28,15 +28,17 @@ Languages:
 
 Modern Data Tools:
 - ![Airflow](https://img.shields.io/badge/-Apache%20Airflow-017CEE?logo=apache-airflow&logoColor=white&style=flat-square) **[Apache Airflow](https://airflow.apache.org/)**: Orchestrator.
-- ![dbt](https://img.shields.io/badge/-dbt-FF694B?logo=dbt&logoColor=white&style=flat-square) **[dbt](https://www.getdbt.com/)**: Data transformation tool that allows analysts and engineers to transform, test, and document data.
+- ![dbt](https://img.shields.io/badge/-dbt-FF694B?logo=dbt&logoColor=white&style=flat-square) **[dbt](https://www.getdbt.com/)**: Data transformation tool used to transform, test, and document data.
 
 Cloud:
-- ![GCP](https://img.shields.io/badge/-GCP-4285F4?logo=google-cloud&logoColor=white&style=flat-square) **[Google Cloud Platform (GCP)](https://cloud.google.com/)**: We used two services: BigQuery to store our data warehouse and Cloud Storage to store tempory data.
-- ![AWS](https://img.shields.io/badge/-AWS-232F3E?logo=amazon-aws&logoColor=white&style=flat-square) **[Amazon Web Services (AWS)](https://aws.amazon.com/)**: We used on service: S3 to store raw data.
-- ![MongoDB](https://img.shields.io/badge/-MongoDB-47A248?logo=mongodb&logoColor=white&style=flat-square) **[MongoDB](https://www.mongodb.com/)**: NoSQL database known for its flexibility and scalability, used for managing large volumes of unstructured data.
+- ![GCP](https://img.shields.io/badge/-GCP-4285F4?logo=google-cloud&logoColor=white&style=flat-square) **[Google Cloud Platform (GCP)](https://cloud.google.com/)**
+- ![AWS](https://img.shields.io/badge/-AWS-232F3E?logo=amazon-aws&logoColor=white&style=flat-square) **[Amazon Web Services (AWS)](https://aws.amazon.com/)**
+
+No-SQL Database:
+- ![MongoDB](https://img.shields.io/badge/-MongoDB-47A248?logo=mongodb&logoColor=white&style=flat-square) **[MongoDB](https://www.mongodb.com/)**
 
 Devops:
-- ![Docker](https://img.shields.io/badge/-Docker-2496ED?logo=docker&logoColor=white&style=flat-square) **[Docker](https://www.docker.com/)**: Containerization platform for packaging and running applications consistently across environments.
+- ![Docker](https://img.shields.io/badge/-Docker-2496ED?logo=docker&logoColor=white&style=flat-square) **[Docker](https://www.docker.com/)**
 - ![Kubernetes](https://img.shields.io/badge/-Kubernetes-326CE5?logo=kubernetes&logoColor=white&style=flat-square) **[Kubernetes](https://kubernetes.io/)** 🏗 Work in progress 🏗
 
 Big Data
