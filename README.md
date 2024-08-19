@@ -40,7 +40,7 @@ Big Data
 
 
 
-# 1. Data modeling Graph
+## 1. Data modeling Graph
 
 <p align="center">
 <img width="756" alt="image" src="https://github.com/user-attachments/assets/5a3b4dbc-37cb-402f-98ff-4af3b3f672d3">
