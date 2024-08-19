@@ -2,11 +2,11 @@
 
 <img width="531" alt="image" src="https://github.com/user-attachments/assets/d5033716-c9e2-4537-9b2e-76fcd78902c8">
 
-Elite Drip is a clothing company. But Elit Drip is special, it only sell its product to NBA players. They built a branding community on basketball only for basktetball players. But Elit Drip does not have physic shops. They sell their products on their e-commerce website. The website opened in January 2023. During their first year, they did not rely on data to take their business decisions. In january 2024, they want to change their strategy and rely on data to take the best business decisions and optimize their process. 
+Elite Drip is a unique clothing brand exclusively catering to NBA players. Unlike typical clothing companies, Elite Drip has built a brand centered entirely around basketball, creating a community that serves professional basketball players. They operate solely through their e-commerce platform, which launched in January 2023, without any physical stores.
 
-In this context the company decided to hire me as their Data Engineer.And the challenge is quite big because the data from this website is quite disorganized! Instead of being centralized, the data is scattered across two main sources: a MongoDB database, CSV files stored in an S3 bucket, and the BallDontlie database. Don't worry they fired the former web developer! 
+As they enter 2024, the company is shifting its strategy to become data-driven, aiming to optimize its processes and make informed decisions. I have been brought on board as their new Data Engineer to lead this initiative. The challenge ahead is significant, as the company’s data is currently disorganized and scattered across multiple sources, including a MongoDB database, CSV files stored in an S3 bucket, and the [BallDontLie](https://www.balldontlie.io/) database. (PS: don't worry they fired the former web developer)
 
-The business teams need easy access to this data to take the best decisions. Therefore, the goal of this project is to efficiently retrieve and consolidate the data from these disparate sources into a centralized BigQuery data warehouse, making it ready for analysis and visualization.
+The business teams need continuous access to high-quality data to make the best decisions. Therefore, the goal of this project is to efficiently retrieve and consolidate the data from these disparate sources into a centralized BigQuery data warehouse, making it ready for analysis and visualization.
 
 ## 🚀 Built With
 
