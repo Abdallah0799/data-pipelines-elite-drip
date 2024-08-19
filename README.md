@@ -45,7 +45,9 @@ Big Data
 
 The diagram bellow illustrates the data pipelines of this company: 
 
-<img width="751" alt="image" src="https://github.com/user-attachments/assets/33dcfe55-228a-4949-8e69-c500415a897b">
+<p align="center">
+<img width="756" alt="image" src="https://github.com/user-attachments/assets/6c1cb846-b202-488d-a084-308497826a6e">
+</p>
 
 Airflow will schedule a dag every hour that follows these steps:
 - extract the latest data from MongoDB and S3 (typically data having updated_at field change the last hour)
