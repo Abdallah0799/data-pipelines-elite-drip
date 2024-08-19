@@ -25,6 +25,8 @@ Cloud:
 Devops:
 - ![Docker](https://img.shields.io/badge/-Docker-2496ED?logo=docker&logoColor=white&style=flat-square) **[Docker](https://www.docker.com/)**: Containerization platform for packaging and running applications consistently across environments.
 - ![Kubernetes](https://img.shields.io/badge/-Kubernetes-326CE5?logo=kubernetes&logoColor=white&style=flat-square) **[Kubernetes](https://kubernetes.io/)**: Orchestration system for automating the deployment, scaling, and management of containerized applications.
+
+Big Data
 - ![Spark](https://img.shields.io/badge/-Apache%20Spark-E25A1C?logo=apachespark&logoColor=white&style=flat-square) **[Apache Spark](https://spark.apache.org/)**: Engine for big data processing, supporting large-scale data analytics.
 
 
