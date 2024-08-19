@@ -7,7 +7,7 @@ The business teams need easy access to this data to take the best decisions. The
 ### Built With
 
 * ![image]({https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue})
-
+* <img src="{https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue}" />
 # 1. Data modelling 
 Here is the data modelling:
 
