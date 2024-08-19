@@ -83,7 +83,7 @@ There is a single DAG scheduled to run every hour. It includes three tasks that 
 
 ## Data Visualization
 We will use Looker Studio for data Viz
-Here is the link to the [dashboard](https://lookerstudio.google.com/reporting/074e01b7-80d1-471e-b25e-fe0f8b4f36bd/page/4Z25D) 
+Here is the link to the [dashboard](https://lookerstudio.google.com/reporting/074e01b7-80d1-471e-b25e-fe0f8b4f36bd/page/4Z25D).
 
 ## Infrastructure
 🏗 Work in progress 🏗
