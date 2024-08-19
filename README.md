@@ -4,6 +4,10 @@ This project focuses on processing data from a fictive company that operates an 
 
 The business teams need easy access to this data to take the best decisions. Therefore, the goal of this project is to efficiently retrieve and consolidate the data from these disparate sources into a centralized BigQuery data warehouse, making it ready for analysis and visualization.
 
+### Built With
+
+* ![image]({https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue})
+
 # 1. Data modelling 
 Here is the data modelling:
 
