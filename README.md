@@ -60,14 +60,16 @@ To design the data architecture, I will implement an ELT (Extract, Load, Transfo
 </p>
 
 1. Extract task
+
 To accomplish this task, we will need to interact with the source databases via API calls. To facilitate this, I developed a set of connector classes: MongoDBConnector, S3Connector, and BallDontLieConnector. Each of these classes inherits from a BaseConnector class and includes a fetch_data method. This method accepts two key parameters: data_type (representing the specific entity to fetch, such as orders or order items) and filters (which can include criteria like date ranges).
 
 2. Load task
 
-3. Transform task 
+3. Transform task
+
 finally a dbt task is started to make transformation on our raw tables and create models ready for analysis and visualization. dbt task is created with the open source project dbt-airflow
 
-### About Airflow
+#### About Airflow
 There is one dag. Here are the tasks:
 
 <p align="center">
