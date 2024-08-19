@@ -1,6 +1,7 @@
 ## About the project
 
-<img width="393" alt="image" src="https://github.com/user-attachments/assets/71069493-c3cd-48dc-b0bb-0fcae1fc8a7e">
+<img width="326" alt="image" src="https://github.com/user-attachments/assets/ba709511-b0eb-41df-86b7-602f077d4b90">
+
 
 
 Elite Drip is a unique clothing brand exclusively catering to NBA players. Unlike typical clothing companies, Elite Drip has built a brand centered entirely around basketball, creating a community that serves professional basketball players. They operate solely through their e-commerce platform, which launched in January 2023, without any physical stores.
