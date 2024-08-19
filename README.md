@@ -18,6 +18,7 @@ Airflow will schedule a dag every hour that follows these steps:
 - then load this data into Bigquery table and make sure to not have duplicate and keep only the most recent data in each table
 - finally a dbt task is started to make transformation on our raw tables and create models ready for analysis and visualization. dbt task is created with the open source project dbt-airflow
  
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/d696ba56-1721-430e-8171-083acfbb82eb">
 
 # 3. Data Visualization
 We will use Looker Studio for data Viz
