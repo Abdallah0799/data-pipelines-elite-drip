@@ -112,9 +112,9 @@ A new source of data will be added to the pipeline. This source will have a big 
 
 ## About the data
 
-The data from orders, order_items and charges have been genrated randomly.
+The data from **orders**, **order_items** and **charges** have been genrated randomly.
 
-The data from products have been created manually. I will developp later an API to generate new products with LLM.
+The data from **products** have been created manually. I will developp later an API to generate new products with LLM.
 
-The data from players is provides by the BallDontLie api.
+The data from **players** is provides by the BallDontLie api.
 
