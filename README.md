@@ -111,3 +111,10 @@ You can build airflow locally on a Kubernetes cluster with the following steps:
 A new source of data will be added to the pipeline. This source will have a big volume of data, that we will need to process with spark before loading it to our warehouse.
 
 ## About the data
+
+The data from orders, order_items and charges have been genrated randomly.
+
+The data from products have been created manually. I will developp later an API to generate new products with LLM.
+
+The data from players is provides by the BallDontLie api.
+
