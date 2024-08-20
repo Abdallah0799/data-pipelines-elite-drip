@@ -75,7 +75,12 @@ Finally, a dbt task is initiated to transform our raw tables into models that ar
 
 
 ### About Airflow
-There is a single DAG scheduled to run every hour. It includes three tasks that run in parallel: fetching data from MongoDB, S3, and BallDontLie, and loading it into BigQuery. Once these tasks successfully complete, the final task is triggered to execute our dbt models. Here is the tasks diagram:
+There is a single [DAG](https://github.com/Abdallah0799/data-pipelines-elite-drip/blob/main/dags/run_pipeline.py) scheduled to run every hour. It includes three Tasks Group that run in parallel. These Tasks Group contain two tasks: an extract task from the source and a load task to the data warehouse. In order to communicate data between these two tasks, I store the extracted data as a csv file in a Cloud Storage bucket then retrieve this file in the load task. Here are the 3 Tasks Group: 
+- fetching data from **MongoDB** and loading it into BigQuery
+- fetching data from **S3** and loading it into BigQuery
+- fetching data from **BallDontLie** and loading it into BigQuery
+
+Once these 3 tasks successfully complete, the final task is triggered to execute our dbt models. Here is the tasks diagram:
 
 <p align="center">
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/d696ba56-1721-430e-8171-083acfbb82eb">
