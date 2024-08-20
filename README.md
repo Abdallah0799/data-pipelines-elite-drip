@@ -80,7 +80,9 @@ There is a single [DAG](https://github.com/Abdallah0799/data-pipelines-elite-dri
 - fetching data from **S3** and loading it into BigQuery
 - fetching data from **BallDontLie** and loading it into BigQuery
 
-Once these 3 tasks successfully complete, the final task is triggered to execute our dbt models. Here is the tasks diagram:
+Once these 3 tasks successfully complete, the final task is triggered to execute our dbt models. 
+
+Here is the tasks diagram:
 
 <p align="center">
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/d696ba56-1721-430e-8171-083acfbb82eb">
