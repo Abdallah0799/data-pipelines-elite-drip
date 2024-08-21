@@ -4,13 +4,30 @@ from google.oauth2 import service_account
 from google.cloud.exceptions import NotFound
 from typing import List
 
+import settings
 from . import BaseApiConnector
+from utils import align_dataframe_to_bq_schema
+from .cloud_storage import CloudStorageConnector
+
+cloud_storage_conn = CloudStorageConnector('airflow_task_communication',
+                                           settings.SERVICE_ACCOUNT_STORAGE_ADMIN)
 
 
 class BigQueryConnector(BaseApiConnector):
     def __init__(
-            self, service_account_infos: str, scopes: List[str] = None
+            self, database: str,
+            service_account_infos: str,
+            scopes: List[str] = None
             ) -> None:
+        """Initialize the connection to BigQuery. We need to create a
+        bigquery_client with the credentials of a service account.
+
+        :param service_account_infos: Service account informations. The json
+        uploaded from GCP but converted in str format.
+        :param database: The name of the BigQuery dataset containing the tables
+        we want to use
+        """
+        self.database = database
         if scopes is None:
             scopes = ["https://www.googleapis.com/auth/cloud-platform"]
 
@@ -29,29 +46,27 @@ class BigQueryConnector(BaseApiConnector):
             raise
 
     def verify(
-        self, dataset_id: str, table_name: str, schema: List[bigquery.SchemaField]
+        self, data_entity: str, schema: List[bigquery.SchemaField]
     ) -> None:
         """
         Verify the existence of a BigQuery dataset and table, creating
         them if necessary, and ensure the table schema is up to date.
 
-        :param dataset_id: The ID of the BigQuery dataset to verify or create.
-
-        :param table_name: The name of the BigQuery table to verify or create. This
-                        will be combined with the dataset_id and project ID to
-                        form a fully-qualified table ID.
+        :param data_entity: The name of the BigQuery table to verify or create.
+        This will be combined with the dataset_id and project ID to
+        form a fully-qualified table ID.
 
         :param schema: The schema to apply to the BigQuery table if it is
-                    created or if the existing schema differs.
+        created or if the existing schema differs.
         """
         # check existence of dataset
         try:
-            self.bigquery_client.get_dataset(dataset_id)
+            self.bigquery_client.get_dataset(self.database)
         except NotFound:
-            self.bigquery_client.create_dataset(dataset_id)
+            self.bigquery_client.create_dataset(self.database)
 
         # check existence of table id
-        table_id = f"{self.bigquery_client.project}.{dataset_id}.{table_name}"
+        table_id = f"{self.bigquery_client.project}.{self.database}.{data_entity}"
 
         try:
             table = self.bigquery_client.get_table(table_id)
@@ -69,8 +84,7 @@ class BigQueryConnector(BaseApiConnector):
     def insert_data(
         self,
         data: pd.DataFrame,
-        dataset_id: str,
-        table_name: str,
+        data_entity: str,
         schema: List[bigquery.SchemaField],
         duplicate_columns: List[str],
         order_columns: List[str],
@@ -84,10 +98,7 @@ class BigQueryConnector(BaseApiConnector):
         :param data: The pandas DataFrame containing the data to be inserted
         into the BigQuery table.
 
-        :param dataset_id: The ID of the BigQuery dataset where the table
-        resides.
-
-        :param table_name: The name of the BigQuery table into which the data
+        :param data_entity: The name of the BigQuery table into which the data
         will be inserted.
 
         :param schema: The schema of the BigQuery table.
@@ -101,11 +112,16 @@ class BigQueryConnector(BaseApiConnector):
         :param order: see docstring of drop_duplicates()
 
         """
+        # if data is empty we go fetch data in s3
+        if data is None:
+            data = cloud_storage_conn.fetch_data(data_entity + '.csv')
+            data = align_dataframe_to_bq_schema(data, data_entity)
+
         # Checking dataset and table
-        self.verify(dataset_id, table_name, schema)
+        self.verify(data_entity, schema)
 
         # Job config then run job
-        table_id = f"{self.bigquery_client.project}.{dataset_id}.{table_name}"
+        table_id = f"{self.bigquery_client.project}.{self.database}.{data_entity}"
         job_config = bigquery.LoadJobConfig(schema=schema)
         job = self.bigquery_client.load_table_from_dataframe(
             data, table_id, job_config=job_config
@@ -115,13 +131,12 @@ class BigQueryConnector(BaseApiConnector):
         # Drop duplicates if a duplicate columns is given
         if len(duplicate_columns) > 0:
             self.drop_duplicates(
-                dataset_id, table_name, duplicate_columns, order_columns, order
+                data_entity, duplicate_columns, order_columns, order
             )
 
     def drop_duplicates(
         self,
-        dataset_id: str,
-        table_name: str,
+        data_entity: str,
         duplicate_columns: List[str],
         order_columns: List[str],
         order: str = "DESC",
@@ -131,9 +146,7 @@ class BigQueryConnector(BaseApiConnector):
         This function uses a SQL query to create or replace the table with a
         version that has duplicates removed
 
-        :param dataset_id: The ID of the BigQuery dataset containing the table.
-
-        :param table_name: The name of the BigQuery table from which to remove
+        :param data_entity: The name of the BigQuery table from which to remove
         duplicates.
 
         :param duplicate_columns: A list of columns used to identify duplicate
@@ -145,7 +158,7 @@ class BigQueryConnector(BaseApiConnector):
         :param order: The order used to determine which rows are kept. It can
         be DESC (descending) or ASC (ascending)
         """
-        table_id = f"{self.bigquery_client.project}.{dataset_id}.{table_name}"
+        table_id = f"{self.bigquery_client.project}.{self.database}.{data_entity}"
 
         # Constructing SQL query with parameters
         duplicate_columns_str = ", ".join(duplicate_columns)
@@ -173,17 +186,15 @@ class BigQueryConnector(BaseApiConnector):
         sql_query_job = self.bigquery_client.query(sql_query)
         sql_query_job.result()
 
-    def fetch_data(self, dataset_id: str, table_name: str) -> pd.DataFrame:
+    def fetch_data(self, data_entity: str) -> pd.DataFrame:
         """
         Fetch data from a specified table.
 
-        :param dataset_id: The ID of the BigQuery dataset containing the table.
-
-        :param table_name: The name of the BigQuery table to fetch.
+        :param data_entity: The name of the BigQuery table to fetch.
 
         :return: A pandas DataFrame containing the table date.
         """
-        table_id = f"{self.bigquery_client.project}.{dataset_id}.{table_name}"
+        table_id = f"{self.bigquery_client.project}.{self.database}.{data_entity}"
         query_str = f"SELECT * FROM `{table_id}`"
         # Run query job
         query_job = self.bigquery_client.query(query_str)
