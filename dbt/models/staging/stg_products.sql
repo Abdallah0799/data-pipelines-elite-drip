@@ -1,7 +1,5 @@
-with 
-
-source as (
-    select * from `mycenter-425712.fictive_company.products`
+WITH source AS (
+    SELECT * FROM {{ source('bq_warehouse', 'products') }}
 )
 
-select * from source
+SELECT * FROM source

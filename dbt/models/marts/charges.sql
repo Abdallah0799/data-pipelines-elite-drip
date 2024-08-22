@@ -1,6 +1,5 @@
-with
-    charges as (
-        select * from {{ref('stg_charges')}}
-    )
+WITH charges AS (
+    SELECT * FROM {{ref('stg_charges')}}
+)
 
-select * from charges
+SELECT * FROM charges

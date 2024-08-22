@@ -1,0 +1,9 @@
+models:
+  - name: stg_players
+    description: Customer (they are all basketball players) data with basic cleaning and transformation applied, one row per customer.
+    columns:
+      - name: id
+        description: The unique key for each customer.
+        data_tests:
+          - not_null
+          - unique

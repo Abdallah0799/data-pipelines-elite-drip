@@ -1,11 +1,24 @@
+WITH  __dbt__cte__clients_first_order as (
 WITH orders AS (
     SELECT * 
-    FROM {{ ref('stg_orders') }}
+    FROM `mycenter-425712`.`fictive_company_transformation`.`stg_orders`
+)
+
+SELECT 
+    customer_id, 
+    MIN(order_date) AS first_order_date
+FROM 
+    orders
+GROUP BY 
+    customer_id
+), orders AS (
+    SELECT * 
+    FROM `mycenter-425712`.`fictive_company_transformation`.`stg_orders`
 ),
 
 clients_first_order AS (
     SELECT * 
-    FROM {{ ref('clients_first_order') }}
+    FROM __dbt__cte__clients_first_order
 ),
 
 CohortMonthlyLTV AS (
