@@ -1,11 +1,15 @@
-WITH order_items AS (
+
+
+  create or replace view `mycenter-425712`.`fictive_company_transformation`.`products`
+  OPTIONS()
+  as WITH order_items AS (
     SELECT * 
-    FROM {{ ref('order_items') }}
+    FROM `mycenter-425712`.`fictive_company_transformation`.`order_items`
 ),
 
 products AS (
     SELECT *
-    FROM {{ ref('stg_products') }}
+    FROM `mycenter-425712`.`fictive_company_transformation`.`stg_products`
 )
 
 SELECT
@@ -21,4 +25,5 @@ LEFT JOIN
     products 
     ON o.product_id = products.id
 GROUP BY
-    products.title
+    products.title;
+

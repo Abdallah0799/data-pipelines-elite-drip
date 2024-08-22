@@ -1,6 +1,6 @@
 WITH charges AS (
     SELECT * 
-    FROM {{ ref('stg_charges') }}
+    FROM `mycenter-425712`.`fictive_company_transformation`.`stg_charges`
 )
 
 SELECT 

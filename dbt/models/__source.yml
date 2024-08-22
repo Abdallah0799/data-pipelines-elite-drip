@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: bq_warehouse
+    description: "Bigquery warehouse"
+    schema: fictive_company
+    tables:
+      - name: orders
+      - name: order_items
+      - name: charges
+      - name: products
+      - name: players

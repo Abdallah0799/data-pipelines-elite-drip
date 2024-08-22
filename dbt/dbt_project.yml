@@ -2,7 +2,7 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'data_transformation'
+name: 'dbt_transformation'
 version: '1.0.0'
 
 # This setting configures which "profile" dbt uses for this project.
@@ -24,12 +24,12 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 
 models:
-    dbt:
-      marts:
-        +materialized: incremental
-      staging:
-        +materialized: view
-      analytics:
-        +materialized: view
-      intermediate:
-        +materialized: ephemeral
+  dbt_transformation:
+    marts:
+      +materialized: view
+    staging:
+      +materialized: view
+    analytics:
+      +materialized: view
+    intermediate:
+      +materialized: ephemeral

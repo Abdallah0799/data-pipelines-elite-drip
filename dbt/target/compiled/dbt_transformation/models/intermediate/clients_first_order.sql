@@ -1,6 +1,6 @@
 WITH orders AS (
     SELECT * 
-    FROM {{ ref('stg_orders') }}
+    FROM `mycenter-425712`.`fictive_company_transformation`.`stg_orders`
 )
 
 SELECT 
