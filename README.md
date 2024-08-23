@@ -15,7 +15,6 @@ The business teams need continuous access to high-quality data to make the best 
 
 [About the data](#about-the-data)
 
-
 1. [Data modeling Graph](#data-modeling-graph)
 2. [Data architecture](#data-architecture)
 3. [Data Visualization](#data-visualization)
