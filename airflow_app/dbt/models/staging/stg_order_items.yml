@@ -1,9 +1,0 @@
-models:
-  - name: stg_order_items
-    description: Order Items data which are all items associated to an order. Each order item here has basic cleaning and transformation applied, one row per order item.
-    columns:
-      - name: id
-        description: The unique key for each order item.
-        data_tests:
-          - not_null
-          - unique

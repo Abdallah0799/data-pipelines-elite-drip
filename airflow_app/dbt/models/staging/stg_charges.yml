@@ -1,9 +1,0 @@
-models:
-  - name: stg_charges
-    description: Charge data with basic cleaning and transformation applied, one row per charge. These are the banking transactions assosiated to each order. Can be credit or debit.
-    columns:
-      - name: id
-        description: The unique key for each charge.
-        data_tests:
-          - not_null
-          - unique
