@@ -112,7 +112,7 @@ Here is the link to the [dashboard](https://lookerstudio.google.com/reporting/07
 ## Infrastructure
 🏗 Work in progress 🏗
 
-The ultimate goal is to deploy my Airflow application on Google Kubernetes Engine (GKE). But, as you might expect, it's not that straightforward 😅. So, for now, we’ll simulate a Kubernetes cluster locally using Kind and deploy Airflow on it. The local application will get the DAGS and the rest of this repo with Git-sync. The DevOps settings (like the Helm chart and Dockerfile) are housed in a separate [repository](https://github.com/Abdallah0799/airflow-k8s). This setup will communicate with our main repo via Git-sync. Detailed instructions will be provided in the other repo, allowing you to build your cluster locally and launch the Airflow app.
+The ultimate goal is to deploy my Airflow application on Google Kubernetes Engine (GKE). But, as you might expect, it's not that straightforward 😅. So, for now, we’ll simulate a Kubernetes cluster locally using Kind and deploy Airflow on it. The local application will get the DAGS and the rest of this repo with Git-sync. The DevOps settings (like the Helm chart and Dockerfile) are housed in a separate [repository](https://github.com/Abdallah0799/airflow-k8s). This setup will communicate with our main repo via Git-sync. Detailed instructions will be provided in the other repo, allowing to build your cluster locally and launch the Airflow app.
 
 ## Big Data processing
 🏗 Work in progress 🏗
