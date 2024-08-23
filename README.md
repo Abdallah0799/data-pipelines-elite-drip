@@ -12,7 +12,9 @@ The business teams need continuous access to high-quality data to make the best 
 
 ## Table of Contents
 [Built with](#🚀-built-with)
+
 [About the data](#about-the-data)
+
 
 1. [Data modeling Graph](#data-modeling-graph)
 2. [Data architecture](#data-architecture)
