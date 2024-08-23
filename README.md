@@ -12,13 +12,14 @@ The business teams need continuous access to high-quality data to make the best 
 
 ## Table of Contents
 [Built with](#🚀-built-with)
+[About the data](#about-the-data)
+
 1. [Data modeling Graph](#data-modeling-graph)
 2. [Data architecture](#data-architecture)
 3. [Data Visualization](#data-visualization)
 4. [Infrastructure](#infrastructure)
 5. [Big Data processing](#big-data-processing)
 
-[About the data](#about-the-data)
 
 
 ## 🚀 Built With
@@ -53,6 +54,15 @@ Big Data
 <p align="center">
 <img width="756" alt="image" src="https://github.com/user-attachments/assets/5a3b4dbc-37cb-402f-98ff-4af3b3f672d3">
 </p>
+
+## About the data
+
+The data from **orders**, **order_items** and **charges** have been genrated randomly.
+
+The data from **products** have been created manually. I will developp later an API to generate new products with LLM.
+
+The data from **players** is provides by the BallDontLie api.
+
 
 ## Data architecture
 
@@ -107,12 +117,3 @@ The ultimate goal is to deploy my Airflow application on Google Kubernetes Engin
 🏗 Work in progress 🏗
 
 A new source of data will be added to the pipeline. This source will have a big volume of data, that we will need to process with spark before loading it to our warehouse.
-
-## About the data
-
-The data from **orders**, **order_items** and **charges** have been genrated randomly.
-
-The data from **products** have been created manually. I will developp later an API to generate new products with LLM.
-
-The data from **players** is provides by the BallDontLie api.
-
