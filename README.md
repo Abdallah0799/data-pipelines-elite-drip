@@ -17,7 +17,8 @@ The business teams need continuous access to high-quality data to make the best 
 3. [Data Visualization](#data-visualization)
 4. [Infrastructure](#infrastructure)
 5. [Big Data processing](#big-data-processing)
-6. [About the data](#about-the-data)
+
+[About the data](#about-the-data)
 
 
 ## 🚀 Built With
