@@ -47,7 +47,13 @@ Devops:
 Big Data
 - ![Spark](https://img.shields.io/badge/-Apache%20Spark-E25A1C?logo=apachespark&logoColor=white&style=flat-square) **[Apache Spark](https://spark.apache.org/)** 🏗 Work in progress 🏗
 
+## About the data
 
+The data from **orders**, **order_items** and **charges** have been genrated randomly.
+
+The data from **products** have been created manually. I will developp later an API to generate new products with LLM.
+
+The data from **players** is provided by the BallDontLie api.
 
 
 ## Data modeling Graph
@@ -56,13 +62,6 @@ Big Data
 <img width="756" alt="image" src="https://github.com/user-attachments/assets/5a3b4dbc-37cb-402f-98ff-4af3b3f672d3">
 </p>
 
-## About the data
-
-The data from **orders**, **order_items** and **charges** have been genrated randomly.
-
-The data from **products** have been created manually. I will developp later an API to generate new products with LLM.
-
-The data from **players** is provided by the BallDontLie api.
 
 
 ## Data architecture
