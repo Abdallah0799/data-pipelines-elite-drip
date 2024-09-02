@@ -80,4 +80,4 @@ with DAG(
         ),
     )
 
-    mongodb_to_bq >> s3_to_bq >> bdl_to_bq >> dbt_run
+    [mongodb_to_bq, s3_to_bq, bdl_to_bq] >> dbt_run
