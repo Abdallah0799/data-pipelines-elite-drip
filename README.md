@@ -11,6 +11,9 @@ As they enter 2024, the company is shifting its strategy to become data-driven, 
 The business teams need continuous access to high-quality data to make the best decisions. Therefore, the goal of this project is to efficiently retrieve and consolidate the data from these disparate sources into a centralized data warehouse, making it ready for analysis and visualization.
 
 ## Table of Contents
+
+[Repo associated with this one](#repo-associated-with-this-one)
+
 [Built with](#🚀-built-with)
 
 [About the data](#about-the-data)
@@ -22,6 +25,10 @@ The business teams need continuous access to high-quality data to make the best 
 5. [Big Data processing](#big-data-processing)
 
 
+##  Repo associated with this one
+
+- For the Airflow infrastructure: https://github.com/Abdallah0799/airflow-k8s
+- An API to generate products with OpenAI: https://github.com/Abdallah0799/product-builder
 
 ## 🚀 Built With
 
