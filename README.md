@@ -51,7 +51,7 @@ Big Data
 
 The data from **orders**, **order_items** and **charges** have been genrated randomly.
 
-The data from **products** have been created manually. I will developp later an API to generate new products with LLM.
+The data from **products** are generated with this [API](https://github.com/Abdallah0799/product-builder) that I developed :) 
 
 The data from **players** is provided by the BallDontLie api.
 
