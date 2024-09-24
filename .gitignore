@@ -6,3 +6,4 @@ values.yaml
 data_generation
 Dockerfile
 docker-compose.yaml
+exos.py
